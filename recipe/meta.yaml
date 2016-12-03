@@ -1,6 +1,6 @@
 {% set name = "update_checker" %}
-{% set version = "0.12" %}
-{% set sha256 = "5e265450a0640e8b7e988f323b6b3f1da44cbafdde4884c8e495902843ac367f" %}
+{% set version = "0.15" %}
+{% set sha256 = "dd39a9091d7f890bce3e193ec3d7052fe2c3b68b59ac61edd0627ebb3a0493ad" %}
 
 package:
   name: {{ name|lower }}
