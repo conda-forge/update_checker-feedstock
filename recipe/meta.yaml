@@ -1,6 +1,6 @@
 {% set name = "update_checker" %}
-{% set version = "0.12" %}
-{% set sha256 = "5e265450a0640e8b7e988f323b6b3f1da44cbafdde4884c8e495902843ac367f" %}
+{% set version = "0.16" %}
+{% set sha256 = "70e39446fccf77b21192cf7a8214051fa93a636dc3b5c8b602b589d100a168b8" %}
 
 package:
   name: {{ name|lower }}
@@ -13,6 +13,7 @@ source:
 
 build:
   number: 0
+  noarch: python
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -22,7 +23,7 @@ requirements:
 
   run:
     - python
-    - requests >=1.0.2
+    - requests >=2.3.0
 
 test:
   imports:
@@ -30,12 +31,13 @@ test:
 
 about:
   home: https://github.com/bboe/update_checker
-  license: BSD 2-Clause
+  license: BSD-2-Clause
   license_family: BSD
   license_file: LICENSE.txt
   dev_url: https://github.com/bboe/update_checker
-  summary: 'A python module that will check for package updates.'
+  summary: A python module that will check for package updates.
 
 extra:
   recipe-maintainers:
     - proinsias
+    - bollwyvl
