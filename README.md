@@ -5,7 +5,7 @@ Home: https://github.com/bboe/update_checker
 
 Package license: BSD-2-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: A python module that will check for package updates.
 
