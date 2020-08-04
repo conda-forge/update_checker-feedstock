@@ -1,5 +1,5 @@
 {% set name = "update_checker" %}
-{% set version = "0.17" %}
+{% set version = "0.18.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2def8db7f63bd45c7d19df5df570f3f3dfeb1a1f050869d7036529295db10e62
+  sha256: 6a2d45bb4ac585884a6b03f9eade9161cedd9e8111545141e9aa9058932acb13
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
