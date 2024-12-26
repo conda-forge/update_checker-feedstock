@@ -1,34 +1,36 @@
-{% set name = "update_checker" %}
 {% set version = "0.18.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: update_checker
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/u/update_checker/update_checker-{{ version }}.tar.gz
   sha256: 6a2d45bb4ac585884a6b03f9eade9161cedd9e8111545141e9aa9058932acb13
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
 
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
+    - setuptools
   run:
-    - python
+    - python >={{ python_min }}
     - requests >=2.3.0
 
 test:
   requires:
     - pip
+    - python {{ python_min }}
   imports:
     - update_checker
   commands:
-    - python -m pip check
+    - pip check
 
 about:
   home: https://github.com/bboe/update_checker
