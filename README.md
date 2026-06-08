@@ -3,7 +3,7 @@ About update_checker-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/update_checker-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/bboe/update_checker
+Home: https://pypi.org/project/update-checker
 
 Package license: BSD-2-Clause
 
