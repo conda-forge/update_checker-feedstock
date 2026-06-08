@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: "1.0.0"
+  python_check_max: "3.14"
+
+package:
+  name: update_checker
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/u/update_checker/update_checker-${{ version }}.tar.gz
+  sha256: bfcac66414572a82a98ea8c8633bf1ce5d102750e3b93469b89b30aa845cd1d7
+
+build:
+  number: 0
+  noarch: python
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - uv-build >=0.8.0,<1.0
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports: update_checker
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - ${{ python_check_max }}.*
+
+about:
+  summary: A python module that will check for package updates.
+  license: BSD-2-Clause
+  license_file: LICENSE.txt
+  homepage: https://pypi.org/project/update-checker
+  repository: https://github.com/bboe/update_checker
+
+extra:
+  recipe-maintainers:
+    - proinsias
+    - bollwyvl
