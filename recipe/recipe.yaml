@@ -17,7 +17,7 @@ build:
   number: 0
   noarch: python
   script:
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
 
 requirements:
   host:
@@ -28,6 +28,11 @@ requirements:
     - python >=${{ python_min }}
 
 tests:
+  - package_contents:
+      strict: true
+      site_packages:
+        - update_checker/**
+        - update_checker-${{ version }}.dist-info/**
   - python:
       imports: update_checker
       pip_check: true
