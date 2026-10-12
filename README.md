@@ -42,31 +42,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `update_checker` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install update_checker
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install update_checker
 ```
 
-It is possible to list all of the versions of `update_checker` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add update_checker
+# for installing globally
+pixi global install update_checker
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `update_checker` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search update_checker --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search update_checker --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search update_checker --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -78,6 +120,8 @@ mamba repoquery whoneeds update_checker --channel conda-forge
 # List dependencies of `update_checker`:
 mamba repoquery depends update_checker --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
