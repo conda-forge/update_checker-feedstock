@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.0.0"
+  version: "1.0.1"
   python_check_max: "3.14"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/u/update_checker/update_checker-${{ version }}.tar.gz
-  sha256: bfcac66414572a82a98ea8c8633bf1ce5d102750e3b93469b89b30aa845cd1d7
+  sha256: d72a8751f36664974a8b2b9d87080efdc0562c5ec07eaa73cd1937c69857db98
 
 build:
   number: 0
